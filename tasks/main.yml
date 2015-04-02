@@ -1,0 +1,12 @@
+---
+- name: Download the install crane script
+  get_url: url="https://raw.githubusercontent.com/michaelsauter/crane/master/download.sh" dest="/tmp/install_crane.sh" mode=0777
+
+- name: execute install crane script
+  command: "/tmp/install_crane.sh"
+  args:
+    chdir: "/tmp"
+
+- name: install crane script
+  shell: "mv /tmp/crane /usr/local/bin/crane"
+
